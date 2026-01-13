@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Input Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f3f4f6;
+    }
+
+    form {
+      background-color: white;
+      padding: 20px;
+      max-width: 400px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input, textarea, button {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #4f46e5;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #3730a3;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Daily Time Tracker</h2>
+  <form id="timeForm">
+    <label for="name">Your Name</label>
+    <input type="text" id="name" placeholder="Enter your name" required />
+
+    <label for="activity">What did you do today?</label>
+    <textarea id="activity" placeholder="Describe your main activities..." required></textarea>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="result" style="margin-top: 20px;"></div>
+
+  <script>
+    document.getElementById("timeForm").addEventListener("submit", function(e) {
+      e.preventDefault(); // Prevent page reload
+
+      // Get input values
+      const name = document.getElementById("name").value;
+      const activity = document.getElementById("activity").value;
+
+      // Display results
+      const resultDiv = document.getElementById("result");
+      resultDiv.innerHTML = `<h3>Thank you, ${name}!</h3><p>Your activity:</p><p>${activity}</p>`;
+
+      // Optionally log to console
+      console.log("Name:", name);
+      console.log("Activity:", activity);
+    });
+  </script>
+
+</body>
+</html>
