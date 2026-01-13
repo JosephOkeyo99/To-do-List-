@@ -4,20 +4,23 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="/To-Do-List.css">
+  <script src="To-Do-List.js" defer></script>
     <title>To-do list</title>
+  
 </head>
 <body> 
+
     <div class="container">
         <div class="toDoApp">
          <h1>To-Do-List <img src="" alt=""></h1>
 
          <div class="row">
-            <input type="text" id="input-box" placeholder="add you task">
+    <input type="text" id="input-box" placeholder="add todays task">
 
-            <button type="submit">ADD</button>
+    <button onclick="addTask()">ADD</button>
    </div>
-            <!-- <ul id="list-container">
-     <li class="checked">Task 1</li>
+            <ul id="list-container"></ul>
+     <!-- <li class="checked">Task 1</li>
                 <li >Task 2</li>
                 <li>Task 3</li>
                 <li>Task 4</li>
